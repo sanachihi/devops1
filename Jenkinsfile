@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('GIT') {
       steps {
-        git branch: 'timesheet', url: 'https://github.com/sanachihi/timesheet.git'
+        git branch: 'master', url: 'https://github.com/sanachihi/timesheet.git'
       }
     }
     stage('Compile Stage') {
