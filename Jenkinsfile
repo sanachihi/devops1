@@ -18,7 +18,7 @@ pipeline {
     }
   stage('SonarQube Analysis') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.token=sqa_2ce8c7b0b26806111384d5c23d29d396a3471b1c -Dmaven.test.skip=true';
+                sh 'mvn sonar:sonar -Dsonar.token=sqa_9475dc01c41e81345ddaa89dbc731be725cad6d8 -Dmaven.test.skip=true';
             }
     }
    /* stage('MVN Nexus'){
