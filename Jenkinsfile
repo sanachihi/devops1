@@ -26,5 +26,17 @@ pipeline {
     			sh 'mvn deploy -Dmaven.test.skip=true'
     		}
 	    }*/
+	  stage('Deploy Image') {
+    steps {
+        script {
+            withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
+                sh '''
+                    docker build -t sanachihi/timesheet-devops:1.0.0 .
+                    docker push sanachihi/timesheet-devops:1.0.0
+                '''
+            }
+        }
+    }
+}
   }
 }
